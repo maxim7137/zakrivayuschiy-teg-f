@@ -4,7 +4,6 @@
 ✦ like-icon — для svg-иконки анимированного сердца
 ✦ card__like-button — для кнопки Like рядом с иконкой
 ✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
@@ -13,4 +12,125 @@
 .page {
 	min-inline-size: 320px;
 	min-block-size: 100dvb;
+	padding-top: 100px;
+	font-family: var(--main-font), sans-serif;
+	font-variation-settings: "wght" var(--text-weigh);
+	font-size: 18px;
+}
+
+.container {
+	max-width: var(--container-size);
+	margin: 0 auto;
+}
+
+.header {
+	display: grid;
+	place-content: center;
+	place-items: center;
+	gap: 20px 0;
+	padding: clamp(7.5rem, 0.751vw + 7.324rem, 8rem) 0;
+	margin-bottom: 100px;
+	background-color: #fff;
+	border: 2px solid #000;
+	font-family: var(--accent-font), sans-serif;
+	line-height: 1;
+	text-transform: uppercase;
+}
+
+.header__title {
+	font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+}
+
+.header__subtitle {
+	font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+}
+
+.card {
+	border: 2px solid #000;
+}
+
+.card__title {
+	font-size: 18px;
+	line-height: 1.21;
+	padding: 4.625px 10px 4.624px 10px;
+}
+
+@media (width < 768px) {
+	.card__title {
+		padding: 4.249px 10px;
+	}
+}
+
+.card__picture {
+	position: relative;
+	aspect-ratio: 1/1;
+	overflow: hidden;
+}
+
+.card__logo {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 25px 25px 0 0;
+	font-family: var(--accent-font), sans-serif;
+	text-transform: uppercase;
+	font-size: 14px;
+	opacity: 0.5;
+	/* обводка */
+	text-shadow: -1px 0 #000000, 0 1px #000000, 1px 0 #000000, 0 -1px #000000;
+}
+
+@media (width < 576px) {
+	.card__logo {
+		padding: 25px 13px 0 0;
+	}
+}
+
+/* обводка */
+@supports ((text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff)) {
+	.card__logo {
+		-webkit-text-stroke: 1px #fff;
+		text-stroke: 1px #fff;
+		text-shadow: none;
+	}
+}
+
+.card__image {
+	width: 100%;
+	aspect-ratio: 1/1;
+}
+
+.card__caption {
+	padding: 25px;
+	display: flex;
+	flex-direction: column;
+	gap: 25px 0;
+}
+
+.button {
+	border: none;
+	background: none;
+	padding: 0;
+}
+
+.card__like {
+	display: flex;
+	gap: 0 12px;
+	align-items: center;
+	margin-left: auto;
+}
+
+.card__icon-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.card__like-button {
+	width: 169px;
+	height: 38px;
+	border: 1px solid #000;
+	font-size: 14px;
+	line-height: 0.9;
+	font-family: var(--accent-font), sans-serif;
 }

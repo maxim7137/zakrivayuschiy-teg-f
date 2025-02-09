@@ -76,6 +76,7 @@
 	text-transform: uppercase;
 	font-size: 14px;
 	opacity: 0.5;
+	mix-blend-mode: hard-light;
 	/* обводка */
 	text-shadow: -1px 0 #000000, 0 1px #000000, 1px 0 #000000, 0 -1px #000000;
 }
@@ -129,8 +130,40 @@
 .card__like-button {
 	width: 169px;
 	height: 38px;
-	border: 1px solid #000;
+	border: 2px solid #000;
 	font-size: 14px;
 	line-height: 0.9;
 	font-family: var(--accent-font), sans-serif;
+}
+
+.footer__save-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	width: 355px;
+	height: 55px;
+	margin: 50px auto 100px;
+	border: 2px solid #000;
+	font-size: 14px;
+	line-height: 1;
+	font-family: var(--accent-font), sans-serif;
+}
+
+.footer__floppy {
+	width: 21px;
+	height: 21px;
+}
+
+@media (width < 576px) {
+	.footer__save-button {
+		flex-direction: column;
+		width: 306px;
+		height: 84px;
+	}
+
+	.footer__floppy {
+		width: 28px;
+		height: 28px;
+	}
 }

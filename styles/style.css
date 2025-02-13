@@ -216,10 +216,15 @@
 
 .close-button {
 	width: 100%;
+	height: 38px;
 	font-size: 14px;
 	line-height: 1;
 	font-family: var(--accent-font), sans-serif;
 	border: 2px solid #000;
-	width: 293px;
-	height: 38px;
+}
+
+@media (width < 576px) {
+	.dialog {
+		width: 341px;
+	}
 }

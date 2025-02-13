@@ -114,6 +114,10 @@
 	padding: 0;
 }
 
+.button:hover {
+	cursor: pointer;
+}
+
 .card__like {
 	display: flex;
 	gap: 0 12px;
@@ -166,4 +170,56 @@
 		width: 28px;
 		height: 28px;
 	}
+}
+
+.dialog {
+	position: fixed;
+	inset: 0;
+	display: grid;
+	gap: 30px 20px;
+	width: 353px;
+	height: 191px;
+	place-content: center;
+	grid-template-columns: repeat(2, auto);
+	transition: opacity 0.3s ease-in-out;
+	border: 2px solid #000;
+	padding: 30px;
+	overflow: hidden;
+}
+
+.dialog::backdrop {
+	background-color: rgb(0 0 0 / 0.75);
+}
+
+.dialog:not([open]) {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.dialog__form {
+	grid-column: span 2;
+}
+
+.footer__floppy {
+	align-self: center;
+	width: 39px;
+	height: 39px;
+}
+
+.dialog__text {
+	font-family: var(--accent-font), sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.5;
+	text-transform: uppercase;
+}
+
+.close-button {
+	width: 100%;
+	font-size: 14px;
+	line-height: 1;
+	font-family: var(--accent-font), sans-serif;
+	border: 2px solid #000;
+	width: 293px;
+	height: 38px;
 }

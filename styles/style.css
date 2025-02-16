@@ -16,6 +16,8 @@
 	font-family: var(--main-font), sans-serif;
 	font-variation-settings: "wght" var(--text-weigh);
 	font-size: 18px;
+	background-size: cover;
+	background-image: var(--fon);
 }
 
 .container {
@@ -47,6 +49,7 @@
 
 .card {
 	border: 2px solid #000;
+	background-color: #fff;
 }
 
 .card__title {
@@ -112,6 +115,14 @@
 	border: none;
 	background: none;
 	padding: 0;
+	position: relative;
+}
+
+.button__text {
+	position: relative;
+	z-index: 1;
+	color: #fff;
+	mix-blend-mode: difference;
 }
 
 .button:hover {
@@ -125,12 +136,14 @@
 	margin-left: auto;
 }
 
+/* сердечко */
 .card__icon-button {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
+/* Like */
 .card__like-button {
 	width: 169px;
 	height: 38px;
@@ -138,8 +151,9 @@
 	font-size: 14px;
 	line-height: 0.9;
 	font-family: var(--accent-font), sans-serif;
+	transition: box-shadow 0.3s;
 }
-
+/* сохранить */
 .footer__save-button {
 	display: flex;
 	align-items: center;
@@ -152,11 +166,48 @@
 	font-size: 14px;
 	line-height: 1;
 	font-family: var(--accent-font), sans-serif;
+	background-color: #fff;
+}
+
+/* Like и сохранить focus */
+.card__like-button:focus,
+.card__like-button:focus-visible,
+.footer__save-button:focus,
+.footer__save-button:focus-visible {
+	outline: none;
+	box-shadow: 2px 2px 0 0 #000;
+	transition: box-shadow 0.3s;
+}
+
+/* Like и сохранить псевдоэлемент */
+.card__like-button::before,
+.footer__save-button::before {
+	content: "";
+	top: 0;
+	left: 0;
+	position: absolute;
+	height: 100%;
+	width: 0%;
+	background-color: #000;
+	transition: width 0.5s ease-in-out;
+}
+/* Like и сохранить hover */
+.card__like-button:hover::before,
+.footer__save-button:hover::before {
+	width: 100%;
+	transition: width 0.5s ease-in-out;
 }
 
 .footer__floppy {
+	align-self: center;
 	width: 21px;
 	height: 21px;
+	position: relative;
+	z-index: 1;
+	color: #fff;
+	/* fill: #fff; */
+	/* stroke: #fff; */
+	mix-blend-mode: difference;
 }
 
 @media (width < 576px) {
@@ -198,12 +249,6 @@
 
 .dialog__form {
 	grid-column: span 2;
-}
-
-.footer__floppy {
-	align-self: center;
-	width: 39px;
-	height: 39px;
 }
 
 .dialog__text {

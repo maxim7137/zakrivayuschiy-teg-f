@@ -141,6 +141,42 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	transition: outline 0.3s ease;
+}
+
+.sparks {
+	opacity: 0;
+}
+
+.core {
+	fill: transparent;
+	transition: fill 0.3s linear 0.03s;
+}
+
+.card__icon-button:hover .core {
+	fill: var(--black);
+	transition: fill 0.3s linear;
+}
+
+.main-body {
+	fill: transparent;
+	transition: fill 0.3s linear;
+}
+
+.card__icon-button:hover .main-body {
+	fill: var(--black);
+	transition: fill 0.3s linear 0.05s;
+}
+
+/* сердечко */
+
+.card__icon-button:focus {
+	outline: none;
+}
+.card__icon-button:focus-visible {
+	outline: 2px solid #000;
+	outline-offset: -1px;
+	transition: outline 0.3s ease;
 }
 
 /* Like */
@@ -171,8 +207,10 @@
 
 /* Like и сохранить focus */
 .card__like-button:focus,
+.footer__save-button:focus {
+	outline: none;
+}
 .card__like-button:focus-visible,
-.footer__save-button:focus,
 .footer__save-button:focus-visible {
 	outline: none;
 	box-shadow: 2px 2px 0 0 #000;
@@ -205,8 +243,6 @@
 	position: relative;
 	z-index: 1;
 	color: #fff;
-	/* fill: #fff; */
-	/* stroke: #fff; */
 	mix-blend-mode: difference;
 }
 

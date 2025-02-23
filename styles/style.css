@@ -126,6 +126,10 @@
 	mix-blend-mode: difference;
 }
 
+dialog .button__text {
+	text-transform: uppercase;
+}
+
 .button:hover {
 	cursor: pointer;
 }

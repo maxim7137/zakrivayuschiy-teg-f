@@ -527,7 +527,7 @@
 			<button
 				class="button footer__save-button"
 				type="button"
-				onclick="window['dialog-id'].showModal()"
+				onclick="window['dialog-id'].style.display = 'grid'; window['dialog-id'].showModal();"
 				aria-controls="dialog-id"
 			>
 				<svg class="footer__floppy" viewBox="0 0 21 21">
@@ -541,15 +541,15 @@
 				<use href="./svg/floppy.svg#floppy" />
 			</svg>
 			<p class="dialog__text">Вставтье дискету, чтобы продолжить</p>
-			<div class="dialog__form">
+			<form class="dialog__form" method="dialog">
 				<button
-					type="button"
+					type="submit"
 					class="button close-button"
-					onclick="event.preventDefault(); document.getElementById('dialog-id').close()"
+					onclick="event.preventDefault(); document.getElementById('dialog-id').close(); document.getElementById('dialog-id').style.display = 'none';"
 				>
-					<span class="button__text">OK</span>
+					<span class="button__text">Ок</span>
 				</button>
-			</div>
+			</form>
 		</dialog>
 		<script src="./scripts/like.js"></script>
 	</body>
